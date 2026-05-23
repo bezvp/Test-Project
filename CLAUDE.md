@@ -134,6 +134,40 @@ api_key = os.getenv("API_KEY")
 
 ---
 
+## New Project Checklist
+
+When starting any new project, work through these steps in order before writing any real code:
+
+- [ ] Create project folder
+- [ ] `git init` + initial commit
+- [ ] Create GitHub repo and push
+- [ ] Create `CLAUDE.md` (copy and update this template)
+- [ ] Create `.gitignore` (always before first real commit)
+- [ ] Create virtual environment: `python3 -m venv .venv`
+- [ ] Create `.env` (real secrets, never committed) and `.env.example` (committed template with empty values)
+- [ ] Create `src/` and `tests/` folders
+- [ ] Write a proper `README.md` (what it does, how to run it, what env vars are needed)
+- [ ] Install base packages and generate `requirements.txt`
+- [ ] Set up branch protection on GitHub (Settings → Branches → Add rule, protect `main`)
+
+For agent/AI projects, also:
+- [ ] Install `anthropic` and `python-dotenv` packages
+- [ ] Add `ANTHROPIC_API_KEY` to `.env` and `.env.example`
+
+---
+
+## Branching Strategy
+
+- `main` is always stable — never work directly on it
+- Create a feature branch for every piece of work:
+  ```bash
+  git checkout -b feature/short-description
+  ```
+- Push the branch to GitHub and open a Pull Request to merge into `main`
+- For solo projects this is optional but a good habit to build
+
+---
+
 ## Notes for Claude
 
 - This user is learning — explain concepts clearly without assuming prior knowledge
@@ -141,4 +175,5 @@ api_key = os.getenv("API_KEY")
 - Always explain what a command does before running it if it's destructive or unfamiliar
 - Prefer simple, readable solutions over clever or complex ones
 - When suggesting next steps, offer options rather than just proceeding
-- When initializing any new project, always create a `.gitignore` before the first commit — never let `.env` or `.venv/` get committed accidentally
+- When initializing any new project, run through the New Project Checklist above before writing any code
+- Always create `.gitignore` before the first real commit — never let `.env` or `.venv/` get committed accidentally
