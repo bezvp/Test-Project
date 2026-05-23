@@ -141,3 +141,4 @@ api_key = os.getenv("API_KEY")
 - Always explain what a command does before running it if it's destructive or unfamiliar
 - Prefer simple, readable solutions over clever or complex ones
 - When suggesting next steps, offer options rather than just proceeding
+- When initializing any new project, always create a `.gitignore` before the first commit — never let `.env` or `.venv/` get committed accidentally
